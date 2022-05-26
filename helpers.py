@@ -175,7 +175,7 @@ class CustomPlotlyPlots():
         try:
             df = yf.download(
                 tickers=self.ticker,
-                period="2y",
+                period="1y",
                 interval="1d",
                 group_by="ticker",
                 auto_adjust=True,
@@ -209,7 +209,7 @@ class CustomPlotlyPlots():
 
         # Set the starting point and end point for the prediction
         start = len(train_df) + len(test_df) - 1
-        end = start + 350
+        end = start + 50
 
         # Get the prediction for the next 50 days
         prediction = res.predict(start, end).rename("Prediction")
